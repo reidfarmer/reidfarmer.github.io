@@ -1,0 +1,251 @@
+:root {
+    --navbar-height: 70px;
+}
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #e6f2ff; 
+    color: #003366;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 600; 
+}
+
+/* Navbar styling */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    height: var(--navbar-height);
+}
+
+nav a {
+    color: #00509e;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #e6f2ff;
+    color: #003366;
+}
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section styling */
+section {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    scroll-margin-top: var(--navbar-height); 
+}
+
+section::before {
+    height: var(--navbar-height);
+    margin-top: calc(-1 * var(--navbar-height));
+}
+
+h2 {
+    color: #003366;
+    border-bottom: 2px solid #00509e;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* About Me section layout */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills section */
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Connect section styling */
+.connect a {
+    text-decoration: none;
+    color: #00509e;
+    border: 2px solid #00509e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.connect a:hover {
+    background-color: #00509e;
+    color: #fff;
+}
+
+/* Project section styling */
+.project {
+    padding: 20px 0;
+}
+
+.project h3 {
+    color: #00509e;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.project p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.project video {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust size for the course-review.mov video */
+.small-video {
+    width: 60% !important;
+    max-width: 420px !important;
+    height: auto !important;
+}
+
+/* Divider line after each project except the last */
+.project:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: #00509e;
+    margin: 40px auto;
+    border-radius: 1px;
+}
+
+/* Connect section styling */
+.connect {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.connect a {
+    text-decoration: none;
+    color: #00509e;
+    border: 2px solid #00509e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.connect a:hover {
+    background-color: #00509e;
+    color: #fff;
+}
+
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.copy {
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        font-size: 0.9em;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .project h3 {
+        font-size: 1.5em;
+    }
+
+    .project p {
+        font-size: 1em;
+    }
+}
