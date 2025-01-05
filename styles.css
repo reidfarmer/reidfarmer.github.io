@@ -7,6 +7,10 @@
     --navbar-height: 60px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -176,13 +180,15 @@ section:hover h2::after {
     background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
     border-radius: 50%;
     z-index: -1;
-    opacity: 0.7;
-    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.about-image:hover::before {
-    transform: scale(1.05);
+/* The hover effect is now triggered when the entire container is hovered over */
+.about-container:hover .about-image::before {
     opacity: 1;
+    transform: scale(1);
 }
 
 .about-image img {
@@ -194,7 +200,8 @@ section:hover h2::after {
     transition: transform 0.3s ease;
 }
 
-.about-image:hover img {
+/* The image grows slightly when the entire container is hovered over */
+.about-container:hover .about-image img {
     transform: scale(1.05);
 }
 
@@ -492,7 +499,7 @@ section {
 }
 
 .skill-category:nth-child(1) li:nth-child(1) { animation-delay: 0.1s; }
-.skill-category:nth-child(1) li:nth-child(2) { animation-delay: 0.2s; }
+skill-category:nth-child(1) li:nth-child(2) { animation-delay: 0.2s; }
 .skill-category:nth-child(1) li:nth-child(3) { animation-delay: 0.3s; }
 .skill-category:nth-child(1) li:nth-child(4) { animation-delay: 0.4s; }
 .skill-category:nth-child(1) li:nth-child(5) { animation-delay: 0.5s; }
