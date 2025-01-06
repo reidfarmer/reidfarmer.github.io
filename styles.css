@@ -293,9 +293,27 @@ section:hover h2::after {
     margin-bottom: 20px;
 }
 
+.project ul {
+    padding-left: 20px;
+}
+
+.project li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.project li::before {
+    content: '▹'; 
+    position: absolute;
+    left: -20px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     max-width: 100%;
